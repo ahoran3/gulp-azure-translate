@@ -1,7 +1,7 @@
 {
   "name": "gulp-azure-translate",
-  "version": "0.1.0",
-  "description": "streaming translation tool using azure congnitive services",
+  "version": "0.1.1",
+  "description": "streaming translation tool using azure's congnitive services",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

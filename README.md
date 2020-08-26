@@ -1,5 +1,5 @@
 ### Gulp Azure Translate
-Streaming Translations tool using Azure Congnitive Services
+Streaming Translation tool using Azure's Cognitive Services
 
 ## Api
 ```js
@@ -10,8 +10,8 @@ The config consist of:
 - `apiKey` - _required_ - the api key from your azure congnitive services instance
 - `endpoint` - _required_ - the endpoint from azure congnitive services
 - `region` - _required_ - the region from your azure congnitive services instance
-- `fromLang` - _required_ - the locale code that will be used as the source language
 - `toLangs` - _required_ - array of locale codes to translate the source content to
+- `fromLang` - _optional_ - the locale code that will be used as the source language
 
 
 ## Example Gulp Usage
