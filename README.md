@@ -34,7 +34,7 @@ task('translate', () => {
   return src(['src/en.json'])
     .pipe(translateAzure({
       apiKey: '00000000-00000000-00000000-00000000-0000000000',
-      endpoint: 'https://api.cognitive.microsofttranslator.com/',
+      endpoint: 'https://api.cognitive.microsofttranslator.com',
       region: 'canadacentral',
       fromLang: 'en',
       toLangs: ['es', 'ja']

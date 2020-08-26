@@ -17,7 +17,7 @@ class AzureTranslator {
     const requestBody = [{text}];
     return axios({
       method: 'POST',
-      url: this.config.endpoint || 'https://api.cognitive.microsofttranslator.com/translate',
+      url: `${this.config.endpoint || 'https://api.cognitive.microsofttranslator.com'}/translate`,
       params: {
         'api-version': '3.0',
         'to': toLocale
@@ -25,7 +25,8 @@ class AzureTranslator {
       headers: {
         'Ocp-Apim-Subscription-Key': this.config.apiKey,
         'Ocp-Apim-Subscription-Region': this.config.region,
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
       },
       data: requestBody
     }).then(response => {
@@ -33,7 +34,10 @@ class AzureTranslator {
         text: response.data[0].translations[0].text,
         confidence: response.data[0].detectedLanguage.score
       };
-    }, (err) => err);
+    }, (err) => {
+      console.log(err.toJSON());
+      return err;
+    });
   }
 
   // translates the content string(s) to the given language
