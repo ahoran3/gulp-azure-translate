@@ -5,12 +5,13 @@ Streaming Translations tool using Azure Congnitive Services
 ```js
 translateAzure(config)
 ```
-The config must consist of:
-`apiKey` - the api key from your azure congnitive services instance
-`endpoint` - the endpoint from azure congnitive services
-`region` - the region from your azure congnitive services instance
-`fromLang` - the locale code that will be used as the source language
-`toLangs` - array of locale codes to translate the source content to
+The config consist of:
+
+- `apiKey` - _required_ - the api key from your azure congnitive services instance
+- `endpoint` - _required_ - the endpoint from azure congnitive services
+- `region` - _required_ - the region from your azure congnitive services instance
+- `fromLang` - _required_ - the locale code that will be used as the source language
+- `toLangs` - _required_ - array of locale codes to translate the source content to
 
 
 ## Example Gulp Usage
@@ -18,8 +19,8 @@ The config must consist of:
 #### Gulpfile
 ```js
 // gulpfile.js
-import { task } from 'gulp';
-import { translateAzure } from 'gulp-azure-translate'
+const task = require('gulp');
+const translateAzure = require('gulp-azure-translate');
 
 task('translate', () => {
   return src(['src/en.json'])
@@ -49,8 +50,8 @@ task('translate', () => {
 // src/translations/es.json
 {
   "org": "Organización",
-	"currOrg": "Organización actual",
-	"account": "Cuenta"
+  "currOrg": "Organización actual",
+  "account": "Cuenta"
 }
 ```
 
@@ -58,8 +59,8 @@ task('translate', () => {
 // src/translations/ja.json
 {
   "org": "組織",
-	"currOrg": "現在の組織",
-	"account": "アカウント"
+  "currOrg": "現在の組織",
+  "account": "アカウント"
 }
 
 ```

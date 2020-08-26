@@ -1,20 +1,18 @@
 const Promise = require('bluebird');
 const axios = require('axios');
+
 class AzureTranslator {
-  // options are:
+  // config values are:
   // - apiKey - required
   // - text - required
   // - toLang - required
   // - fromLang - optional
   // - endpoint - optional
-  constructor(options) {
-    this.config = options;
-    console.log('setting up azure translate');
+  constructor(config) {
+    this.config = config;
   }
 
   // translates the content string(s) to the given language
-  // content - strings to translate
-  // langTo - desired translation locale code
   translateItem(itemLabel, text, toLocale) {
     const requestBody = [{text}];
     return axios({
@@ -29,21 +27,16 @@ class AzureTranslator {
         'Ocp-Apim-Subscription-Region': this.config.region,
         'Content-Type': 'application/json'
       },
-      data: [
-        {
-          text
-        }
-      ]
+      data: requestBody
     }).then(response => {
       return {
         text: response.data[0].translations[0].text,
         confidence: response.data[0].detectedLanguage.score
       };
-    });
+    }, (err) => err);
   }
 
   // translates the content string(s) to the given language
-  // content - strings to translate
   translateFile(fileContents, toLocale) {
     console.log(`attempting to translate to ${toLocale}`);
     const fileContentKeys = Object.keys(fileContents);
@@ -68,7 +61,10 @@ class AzureTranslator {
       console.log(`Finished translating ${toLocale} file with ${percentConfidence} confidence.`);
       return fullFile.contents;
     })
-    .catch(console.log);
+    .catch(err => {
+      console.log(err);
+      return err;
+    });
   }
 
 }
