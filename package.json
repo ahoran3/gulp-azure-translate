@@ -1,10 +1,18 @@
 {
   "name": "gulp-azure-translate",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "streaming translation tool using azure's congnitive services",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "homepage": "https://github.com/ahoran3/gulp-azure-translate",
+  "bugs": {
+    "url": "https://github.com/ahoran3/gulp-azure-translate/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahoran3/gulp-azure-translate.git"
   },
   "keywords": [
     "gulp",

@@ -1,6 +1,14 @@
 ### Gulp Azure Translate
 Streaming Translation tool using Azure's Cognitive Services
 
+
+## Installation
+
+You know the drill...
+```
+$ npm i gulp-azure-translate
+```
+
 ## Api
 ```js
 translateAzure(config)
