@@ -1,7 +1,7 @@
 {
   "name": "gulp-azure-translate",
-  "version": "0.0.1",
-  "description": "tool to use azure translate through gulp streaming tasks",
+  "version": "0.0.2",
+  "description": "streaming translation tool using azure congnitive services",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,18 +11,17 @@
     "translate",
     "azure",
     "cognitive",
-    "stream"
+    "stream",
+    "gulpplugin"
   ],
   "author": "Alex Horan",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.20.0",
-    "azure-translate": "^1.2.1",
     "bluebird": "^3.7.2",
     "gulp-util": "^3.0.8",
     "jsonic": "^0.3.1",
     "plugin-error": "^1.0.1",
-    "readable-stream": "^3.6.0",
     "through2": "^4.0.2"
   }
 }

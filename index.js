@@ -3,8 +3,8 @@ const PluginError = require('plugin-error');
 const through = require('through2');
 const jsonic = require('jsonic');
 const gutil = require('gulp-util');
-const axios = require('axios');
 const Promise = require('bluebird');
+
 const AzureTranslator = require('./translator');
 
 // consts

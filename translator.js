@@ -3,13 +3,12 @@ const axios = require('axios');
 class AzureTranslator {
   // options are:
   // - apiKey - required
-  // - text - require
+  // - text - required
   // - toLang - required
   // - fromLang - optional
-  // - resourceUrl - optional
+  // - endpoint - optional
   constructor(options) {
     this.config = options;
-    // this.t = require('azure-translate')(options.apiKey);
     console.log('setting up azure translate');
   }
 
@@ -20,7 +19,7 @@ class AzureTranslator {
     const requestBody = [{text}];
     return axios({
       method: 'POST',
-      url: this.config.resourceUrl || 'https://api.cognitive.microsofttranslator.com/translate',
+      url: this.config.endpoint || 'https://api.cognitive.microsofttranslator.com/translate',
       params: {
         'api-version': '3.0',
         'to': toLocale
@@ -65,7 +64,7 @@ class AzureTranslator {
       }
     })
     .then(fullFile => {
-      const percentConfidence = `${(fullFile.meta.confidenceSum/fullFile.meta.numItems*100).toFixed(5))}%`;
+      const percentConfidence = `${(fullFile.meta.confidenceSum/fullFile.meta.numItems*100).toFixed(5)}%`;
       console.log(`Finished translating ${toLocale} file with ${percentConfidence} confidence.`);
       return fullFile.contents;
     })
