@@ -25,7 +25,7 @@ The config is an object consisting of:
 - `toLangs` - _required_ **_string[]_** - array of locale codes to translate the source content to
 - `fromLang` - _optional_ **_string_** - the locale code that will be used as the source language (default: determined)
 - `slowMode` - _optional_ **_boolean_** - requests all translations in series. (default: false
-- `showErrors` - _optional_ **_boolean_** - displays network errors when encountered. (default false)
+- `showErrors` - _optional_ **_boolean_** - displays detailed network errors when encountered. (default false)
 
 _Note: `apiKey` and `region` are values from the Congnitive Services instance you create in your Azure account. Once created, Check the "Keys and Endpoint" tab to get these values._
 
