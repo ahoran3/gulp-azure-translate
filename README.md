@@ -36,7 +36,7 @@ A list of [supported languages can be found here](https://api.cognitive.microsof
 #### Gulpfile
 ```js
 // gulpfile.js
-const task = require('gulp');
+const { task } = require('gulp');
 const translateAzure = require('gulp-azure-translate');
 
 task('translate', () => {

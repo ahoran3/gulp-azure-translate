@@ -1,6 +1,6 @@
 {
   "name": "gulp-azure-translate",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "streaming translation tool using azure's congnitive services",
   "main": "index.js",
   "scripts": {
