@@ -2,7 +2,7 @@
 const PluginError = require('plugin-error');
 const through = require('through2');
 const jsonic = require('jsonic');
-const gutil = require('gulp-util');
+const Vinyl = require('vinyl');
 const Promise = require('bluebird');
 const AzureTranslator = require('./translator');
 
@@ -29,7 +29,7 @@ module.exports = function(options) {
             return Promise.map(options.toLangs, currLanguage => {
               return translator.translateFile(inputJsonContents, currLanguage).then(outputFileContents => {
                 var newFileContent = JSON.stringify(outputFileContents, null, '\t');
-                this.push(new gutil.File({
+                this.push(new Vinyl({
                     cwd: "./",
                     path: currLanguage + ".json",
                     contents: new Buffer.from(newFileContent)
